@@ -309,7 +309,7 @@ footer {
 
   a {
     display: block;
-    padding: 0.5rem 0.5rem;
+    padding: 0.1rem 0.1rem;
     color: $muted-text-color;
     font-weight: bold;
     line-height: 1.2;
@@ -326,18 +326,18 @@ footer {
   }
 
   li ul li ul > li a {
-    padding-left: 0.5rem;
+    padding-left: 0rem;
   }
 
   li ul li ul li ul > li a {
-    padding-left: 1rem;
+    padding-left: 0rem;
   }
 
   li ul li ul li ul li ul > li a {
-    padding-left: 1.5rem;
+    padding-left: 0rem;
   }
 
   li ul li ul li ul li ul li ul > li a {
-    padding-left: 2rem
+    padding-left: 0rem
   }
 }
