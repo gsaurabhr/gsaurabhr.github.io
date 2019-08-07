@@ -230,7 +230,7 @@ footer {
   .nav__title {
     color: #fff;
     font-size: $type-size-5;
-    padding-left: 10px;
+    padding-left: 1rem;
     margin: 0;
     background: $primary-color;
     border-top-left-radius: $border-radius;
@@ -245,7 +245,6 @@ footer {
 
 .toc__menu {
   margin: 0;
-  padding-right: 20px;
   padding-top: 20px;
   padding-left: 0;
   width: 100%;
@@ -256,7 +255,7 @@ footer {
 
   a {
     display: block;
-    padding-right: 20px;
+    padding-right: 0;
     color: $muted-text-color;
     font-weight: bold;
     line-height: 1.2;
@@ -267,7 +266,7 @@ footer {
     }
   }
 
-  ul {padding: 1rem;}
+  ul {padding-left: 1rem;}
 
   li ul > li a {
     padding: 0;
