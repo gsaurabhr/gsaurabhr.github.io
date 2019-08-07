@@ -308,10 +308,10 @@ footer {
 
   a {
     display: block;
-    padding: 0.25rem 0.75rem;
+    padding: 0.05rem 0.05rem;
     color: $muted-text-color;
     font-weight: bold;
-    line-height: 1.5;
+    line-height: 1.1;
     border-bottom: 1px solid $border-color;
 
     &:hover {
@@ -320,23 +320,23 @@ footer {
   }
 
   li ul > li a {
-    padding-left: 1.25rem;
+    padding-left: 0rem;
     font-weight: normal;
   }
 
   li ul li ul > li a {
-    padding-left: 1.75rem;
+    padding-left: 0.5rem;
   }
 
   li ul li ul li ul > li a {
-    padding-left: 2.25rem;
+    padding-left: 1rem;
   }
 
   li ul li ul li ul li ul > li a {
-    padding-left: 2.75rem;
+    padding-left: 1.5rem;
   }
 
   li ul li ul li ul li ul li ul > li a {
-    padding-left: 3.25rem
+    padding-left: 2rem
   }
 }
