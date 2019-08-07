@@ -248,7 +248,7 @@ footer {
   padding-top: 20px;
   width: 100%;
   height: 70%;
-  overflow-y:auto
+  overflow-y:auto;
   list-style: none;
   font-size: $type-size-5;
 
@@ -283,6 +283,6 @@ footer {
   }
 
   li ul li ul li ul li ul li ul > li a {
-    padding-left: 0rem
+    padding-left: 0rem;
   }
 }
