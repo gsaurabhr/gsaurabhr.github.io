@@ -216,7 +216,7 @@ Note the big difference in mean activation level in different layers (in the pen
 ### Distance between activations for image pairs
 As noted above, we normalize the activation in each layer before computing any distances, so that we can compare across layers.
 
-Below, I compute the distance in activation space for all image pairs. I simply use the Euclidean distance as the metric: d_{i,j} = \sqrt{(r_i-r_j)*(r_i-r_j)}
+Below, I compute the distance in activation space for all image pairs. I simply use the Euclidean distance as the metric: $d_{i,j} = \sqrt{(r_i-r_j)*(r_i-r_j)}$
 
 
 ```python
