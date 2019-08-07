@@ -20,10 +20,9 @@
           <img src="{{site.logo | relative_url}}" alt="Logo" />
         {% endif %}
 
-        <nav class="toc">
-          <header><h4 class="nav__title">{{ page.toc_label | default: "Contents:" }}</h4></header>
-          {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="toc__menu" %}
-        </nav>
+        <p>{{ site.description | default: site.github.project_tagline }}</p>
+
+        <div id="toc"></div>
 
       </header>
       <section>
@@ -39,6 +38,12 @@
       </footer>
     </div>
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
+    <script src="{{ "/assets/js/toc.js" | relative_url }}"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#toc').toc();
+    });
+    </script>
     {% if site.google_analytics %}
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
