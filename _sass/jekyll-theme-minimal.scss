@@ -58,7 +58,7 @@ a:hover small {
 }
 
 .wrapper {
-  width:1500px;
+  width:1200px;
   margin:0 auto;
 }
 
@@ -107,14 +107,15 @@ img {
 }
 
 header {
-  width:500px;
+  width:300px;
   float:left;
+  padding-right: 50px;
   position:fixed;
   -webkit-font-smoothing:subpixel-antialiased;
 }
 
 section {
-  width:900px;
+  width:850px;
   float:right;
   padding-bottom:50px;
 }
@@ -131,7 +132,7 @@ hr {
 }
 
 footer {
-  width:500px;
+  width:300px;
   float:left;
   position:fixed;
   bottom:50px;
