@@ -302,6 +302,7 @@ footer {
 .toc__menu {
   margin: 0;
   padding: 0;
+  padding-right: 0.2rem;
   width: 100%;
   list-style: none;
   font-size: $type-size-5;
@@ -320,23 +321,23 @@ footer {
   }
 
   li ul > li a {
-    padding-left: 0rem;
+    padding-left: 0.0rem;
     font-weight: normal;
   }
 
   li ul li ul > li a {
-    padding-left: 0.3rem;
+    padding-left: 0.15rem;
   }
 
   li ul li ul li ul > li a {
-    padding-left: 0.6rem;
+    padding-left: 0.3rem;
   }
 
   li ul li ul li ul li ul > li a {
-    padding-left: 0.9rem;
+    padding-left: 0.45rem;
   }
 
   li ul li ul li ul li ul li ul > li a {
-    padding-left: 1.2rem
+    padding-left: 0.6rem
   }
 }
