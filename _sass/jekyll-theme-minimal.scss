@@ -287,7 +287,7 @@ footer {
 
   .nav__title {
     color: #fff;
-    font-size: $type-size-6;
+    font-size: $type-size-5;
     background: $primary-color;
     border-top-left-radius: $border-radius;
     border-top-right-radius: $border-radius;
@@ -304,14 +304,14 @@ footer {
   padding: 0;
   width: 100%;
   list-style: none;
-  font-size: $type-size-6;
+  font-size: $type-size-5;
 
   a {
     display: block;
     padding: 0.05rem 0.05rem;
     color: $muted-text-color;
     font-weight: bold;
-    line-height: 1.1;
+    line-height: 1.2;
     border-bottom: 1px solid $border-color;
 
     &:hover {
@@ -325,18 +325,18 @@ footer {
   }
 
   li ul li ul > li a {
-    padding-left: 0.5rem;
+    padding-left: 0.3rem;
   }
 
   li ul li ul li ul > li a {
-    padding-left: 1rem;
+    padding-left: 0.6rem;
   }
 
   li ul li ul li ul li ul > li a {
-    padding-left: 1.5rem;
+    padding-left: 0.9rem;
   }
 
   li ul li ul li ul li ul li ul > li a {
-    padding-left: 2rem
+    padding-left: 1.2rem
   }
 }
