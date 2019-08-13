@@ -6,6 +6,7 @@
 %%capture --no-stdout
 %load_ext autoreload
 %autoreload 2
+from scipy.stats.stats import linregress
 import pickle
 from tqdm import tqdm_notebook as tqdm
 import PIL
@@ -71,7 +72,6 @@ for stim in stim_names:
     cnns[stim].compute_differentiation(discard_remaining=True)
 ```
 
-
 ```python
 rdms = {}
 for key in cnns.keys():
@@ -115,6 +115,13 @@ plt.title('Differentiation for different stimulus sets (normalized by noise diff
 Some observations:
 1. human-movie and multiple-crickets have very little changing during the movies, and so the input image differentiation is super low. This gets propagated through all the layers, which is unsurprising.
 2. Other patterns are similar to what we saw in the validation notebook, except that the overall level of differentiation is slightly lower. The prediction layer on the other hand shows particularly high differentiation. Below, I print out the top class predictions for all imputs to see if this makes sense (it generally does).
+
+
+```python
+diff_by_stim = np.zeros((len(cnns.keys()), cnns[stim_names[0]].n_layers))
+for stim in stim_names:
+    diff_by_stim[stim_names.index(stim)] = cnns[stim].differentiation
+```
 
 ## Predictions
 Just to verify that there are some labels that make sense
@@ -172,17 +179,23 @@ CD is shorthand for CNN-Differentiation
 
 
 ```python
+rs, nrs = [], []
 plt.figure(figsize=(10, 5))
 plt.subplot(1, 2, 1)
-for stim in cnns.keys():
+for stim in stim_names:
     for i in range(cnns[stim].n_layers):
         plt.scatter(cnns[stim].differentiation[0], cnns[stim].differentiation[i],
                     color=cm.Accent(stim_names.index(stim)/len(stim_names), i/cnns[stim].n_layers))
+for l in range(cnns[stim_names[0]].n_layers):
+    m, c, r, p, s = linregress(diff_by_stim[:, 0], diff_by_stim[:, l])
+    plt.plot(diff_by_stim[:, 0], diff_by_stim[:, 0]*m+c,
+             color=cm.Greys(l/cnns[stim_names[0]].n_layers, 0.4))
+    rs.append(r)
 plt.xlabel('Stimulus differentiation')
 plt.ylabel('Layer activity differentiation')
 plt.title('Correlation in raw differentiation')
 plt.subplot(1, 2, 2)
-for stim in cnns.keys():
+for stim in stim_names:
     label = None
     for i in range(cnns[stim].n_layers):
         if i == 20:
@@ -190,22 +203,43 @@ for stim in cnns.keys():
         plt.scatter(cnns[stim].differentiation[0]/cnns['mousenoise.avi'].differentiation[0],
                     cnns[stim].differentiation[i]/cnns['mousenoise.avi'].differentiation[i],
                     color=cm.Accent(stim_names.index(stim)/len(stim_names), i/cnns[stim].n_layers), label=label)
+for l in range(cnns[stim_names[0]].n_layers):
+    m, c, r, p, s = linregress(diff_by_stim[:, 0]/diff_by_stim[11, 0], diff_by_stim[:, l]/diff_by_stim[11, l])
+    plt.plot(diff_by_stim[:, 0], diff_by_stim[:, 0]*m+c,
+             color=cm.Greys(l/cnns[stim_names[0]].n_layers, 0.4))
+    nrs.append(r)
 plt.xlabel('Stimulus differentiation')
 plt.ylabel('Layer activity differentiation')
 plt.title('Correlation in normalized differentiation')
 plt.tight_layout()
-plt.legend(loc=(1.01, 0))
+plt.legend(loc=(1.01, 0));
 ```
 
-![png](output_14_1.png)
+
+![png](output_15_0.png)
 
 
 We see that there is _some_ correlation between input differentiation and activity differentiation. The above figure is for all layers and stimuli put together.
 
-The color lightness corresponds to layer, so that darker colors are higher layers. We don't really see any direct relationship between layer hierarchy and strength of correlation. This becomes clearer in the analysis below.
+The color lightness corresponds to layer, so that darker colors are higher layers. The figure below shows how correlation depends on layer depth.
+
+## Correlation in differentiation decreases with depth
+
+
+```python
+plt.figure(figsize=(10, 3))
+plt.plot(range(len(rs)), np.array(rs)**2, c='k')
+plt.xlabel('Layer')
+plt.ylabel('R-squared for\nSD vs CD')
+plt.xticks(ticks=range(len(cnns[stim_names[0]].layer_names)), labels=cnns[stim_names[0]].layer_names, rotation=60);
+```
+
+
+![png](output_18_0.png)
+
 
 ## Correlations by stimulus set
-The figure below shows the image and activation distance for every pair of input images in the different stimulus sets. Darker colors correspond to earlier layers (so black is the first layer). Again we see that there might be a tiny bit of correlation between images and activity. The correlations are likely obscured by the prediction layer which is at the top.
+The figure below shows the image and activation distance for every pair of input images in the different stimulus sets. Darker colors correspond to earlier layers (so black is the first layer). Again we see that there might be a tiny bit of correlation between images and activity. The correlations are likely obscured by the prediction layer which is at the top. Generally stimulus set does not seem to modulate overall correlation.
 
 
 ```python
@@ -222,14 +256,16 @@ f.text(0.0, 0.5, 'Distance between activations', ha='center', va='center', rotat
 ```
 
 
-![png](output_17_0.png)
+![png](output_20_0.png)
 
 
 ## Correlations by layer
-Here, instead of separating out by stimulus set, I have separated out the data by layer. The colors indicate stimulus set (same colors from [above](#color_ref)). Here we see fairly strong correlations between distance in input and layer activity. The pattern does ot depend strongly on the location of the layer, except perhaps for the last 3-4 layers, where the spread in CD increases.
+Here, instead of separating out by stimulus set, I have separated out the data by layer. The colors indicate stimulus set (same colors from [above](#color_ref)). Here we see fairly strong correlations between distance in stimulus pair and layer activity. The correlation decreases monotonically with layer depth (see next figure).
 
 
 ```python
+dist_by_layer = np.zeros((uti[0].shape[0]*len(stim_names), cnns[stim_names[0]].n_layers-1))
+drs = []
 uti = np.triu_indices(30, k=1)
 f, axes = plt.subplots(4, 5, sharex=True, sharey=True, figsize=(15, 12))
 for stim in cnns.keys():
@@ -237,13 +273,35 @@ for stim in cnns.keys():
         axes.flatten()[i-1].scatter(cnns[stim].rdms[0][uti], cnns[stim].rdms[i][uti],
                                   color=cm.Accent(stim_names.index(stim)/len(stim_names), 0.1))
         axes.flatten()[i-1].set_title('Layer %d (%s)'%(i, cnns[stim].layer_names[i]), size=10)
+        dist_by_layer[stim_names.index(stim)*uti[0].shape[0]:(stim_names.index(stim)+1)*uti[0].shape[0], i-1] = cnns[stim].rdms[i][uti]
+for i in range(1, cnns[stim_names[0]].n_layers):
+    m, c, r, p, s = linregress(dist_by_layer[:, 0], dist_by_layer[:, i-1])
+    axes.flatten()[i-1].plot(dist_by_layer[:, 0], dist_by_layer[:, 0]*m+c,
+                             label='R^sq = %.2f'%r**2, c='k')
+    axes.flatten()[i-1].legend()
+    drs.append(r)
 f.tight_layout()
 f.text(0.5, -0.01, 'Distance between images', ha='center', va='center', size=15)
 f.text(0.0, 0.5, 'Distance between activations', ha='center', va='center', rotation=90, size=15);
 ```
 
 
-![png](output_19_0.png)
+![png](output_22_0.png)
+
+
+### Correlation in distance decreases with depth
+
+
+```python
+plt.figure(figsize=(10, 3))
+plt.plot(range(len(drs)), np.array(drs)**2, c='k')
+plt.xlabel('Layer')
+plt.ylabel('R-squared for\nSD vs CD')
+plt.xticks(ticks=range(len(cnns[stim_names[0]].layer_names)), labels=cnns[stim_names[0]].layer_names, rotation=60);
+```
+
+
+![png](output_24_0.png)
 
 
 
