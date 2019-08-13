@@ -6,6 +6,7 @@ The differentiation analysis is applied to three different sets of images with 4
 - _Noise_ : white RGB noise
 - _Cats_  : Images of cats (that the network classifies as 'tabby_cats' with probability > 0.5)
 - _Random_: Images of random objects
+
 For each of the three categories, we measure the differentiation in the activities in network layers as the median distance in activation space between responses to image pairs from the category.
 
 ### Our intuition is as follows
