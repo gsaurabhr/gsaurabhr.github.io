@@ -1,5 +1,5 @@
 
-# VGG16 tries out to mouse stimuli!
+# VGG16 tries out mouse stimuli!
 
 
 ```python
