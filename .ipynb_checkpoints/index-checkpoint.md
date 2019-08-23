@@ -1,10 +1,15 @@
 # Notebooks by topic
 
-## Differentiation in CNNs
+## Neuropixel recordings
 
 ### August
 
-1. [8/23/2019 **A first loo kat ephys data**](pages/ephys_1/1_Basics.md)
+1. [8/23/2019 **A first look at ephys data**](pages/ephys_1/1_Basics.md)
+   A preliminary look at neuropixel data shows some nice cases of units showing preferential activity to some kinds of stimuli. However, more importantly, the mean activity of a unit for repeated application of the same stimulus is very different from the trial to trial activity. This suggests that responses are extremely variable, and perhaps i should look deeper into the variability. In the meanwhile, this means that it is better to compute the differentiation an a trial by trial basis rather than on any kind of an averaged activity.
+
+## Differentiation in CNNs
+
+### August
 
 1. [8/13/2019 **VGG16 shown mouse stimuli**](pages/VGG16_mouse_stimuli/VGG16_mouse_stimuli.md)
    Preliminary results (differentiation across layers for different movies, correlation between input image differentiation and activation differentiation in the layers, dependence of correlation on layer depth, stimulus set).
