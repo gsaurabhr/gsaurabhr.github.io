@@ -356,15 +356,19 @@ for i in range(3):
 ---
 
 # A bit of CNNs
+
 Correlation between SD and ND decreases systematically with depth for three different networks
 
 ### VGG16
+
 ![png](vgg16.png)
 
 ### InceptionV3
+
 ![png](inceptionV3.png)
 
 ### ResNet50
+
 ![png](resnet50.png)
 
 
