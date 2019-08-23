@@ -29,6 +29,7 @@ for fn in sorted(glob('../../differentiation-analysis/stimuli/stimuli/*.npy'),
 ```
 
 # Example frames showing preprocessing
+
 Note that the processing pipeline is copied over from CNNDifferentiation.py, and the actual pipeline might have changed.
 
 
@@ -81,6 +82,7 @@ with open('../data/08-07-2019_vgg16_200-unit_all-stimuli.dict', 'wb') as f:
 ```
 
 # Differentiation for different movies (image sets)
+
 As discussed with Anton, I am taking one frame for every second and passing it to the CNN. I then use the responses of selected units for the set of 30 input images to measure differentiation.
 
 
@@ -124,6 +126,7 @@ for stim in stim_names:
 ```
 
 ## Predictions
+
 Just to verify that there are some labels that make sense
 
 
@@ -174,6 +177,7 @@ for stim in cnns.keys():
 
 
 # Correlations between SD and CD
+
 CD is shorthand for CNN-Differentiation
 <a id='color_ref'></a>
 

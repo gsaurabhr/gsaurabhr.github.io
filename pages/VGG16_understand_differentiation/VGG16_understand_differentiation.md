@@ -9,7 +9,7 @@ The differentiation analysis is applied to three different sets of images with 4
 
 For each of the three categories, we measure the differentiation in the activities in network layers as the median distance in activation space between responses to image pairs from the category.
 
-### Our intuition is as follows
+## Our intuition is as follows
 
 Early layers of the network respond strongly to local features such as edges, patterns etc. Later layers respond to the semantic content of the image (as recognized by the network). Local properties of images are the most distinct for _noise_ images which have no structure at all, and so differentiaition should be highest for _noise_, and _cats_ and _random_ should have a lower differentiation in early layers.
 

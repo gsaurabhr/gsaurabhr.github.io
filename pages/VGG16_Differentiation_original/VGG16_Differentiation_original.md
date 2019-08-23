@@ -1,5 +1,6 @@
 
 # VGG16 CNN model
+
 <img src="vgg-vd-16-receptive-field.png" alt="Inception V3 Architecture" height="40%" width="40%">
 
 
@@ -117,6 +118,7 @@ plt.tight_layout()
 
 
 ## What layers in the model do we care about? Using all layers...
+
 What layers do I choose? Starting with all layers for now, to see how each works.
 
 
@@ -214,6 +216,7 @@ plt.title("Activations from %d randomly selected units in layer '%s'"%(n_units, 
 Note the big difference in mean activation level in different layers (in the penultimate layer, top panel, activations are three orders of magnitude lower than in layer 4, bottom panel). Thus, it is necessary to normalize activations in each layer before their differences can be compared across layers.
 
 ### Distance between activations for image pairs
+
 As noted above, we normalize the activation in each layer before computing any distances, so that we can compare across layers.
 
 Below, I compute the distance in activation space for all image pairs. I simply use the Euclidean distance as the metric: $d_{i,j} = \sqrt{(r_i-r_j)*(r_i-r_j)}$
@@ -271,6 +274,7 @@ plt.ylabel('Distance in activation space');
 
 
 ### Median differentiation
+
 The figure below shows the differentiation in response, where differentiation is defined as the median of the RDM matrix
 
 
@@ -295,6 +299,7 @@ We see that the median differentiation increases with depth on average, although
 Note also that differentiation is quite low in the fully connected layers. In CNNs, it is believed that the image representations are built up to the last convolutional layer, which is supposed to have most of the semantic information. The fully connected layers only act to use the encoded representations to form the final classes.
 
 ### Effect of sampling noise on differentiation
+
 I now apply the procedure since subsampling multiple times to see how the sampling affects measured differentiation. The procedure is repeated 100 times and the mean and SD of differentiation is plotted.
 
 
@@ -365,6 +370,7 @@ print('Loaded and processed %d images'%(activations[0].shape[0]))
 
 
 ### Differentiation applied to a bunch of cats
+
 The cat images used here are those that the pretrained VGG16 model classifies as 'tabby' with a probability of more than 50%. To change the image set, modify [Generate_adversarial.ipynb](Generate_adversarial.ipynb).
 
 
@@ -380,6 +386,7 @@ print('Loaded and processed %d images'%activations[0].shape[0])
 
 
 ### Differentiation applied to a bunch of adversarial cats
+
 The same set of images as above are used as the starting point. For each image, an adversarial image is created which misclassifies the image into categories other than cats. Differentiation is then computed and plotted for this set of adversarial images
 
 
@@ -413,6 +420,7 @@ Also, block4_conv3 shows the opposite pattern, and it is not at all clear why th
 What this does mean, however, is that if the images really don't matter so much, we might as well show the same movies that are shown to the mouse and get something out of it...
 
 ## What substrate do we use for differentiation? Mean filter activation
+
 There are 224 x 224 x 3 x 9 x 64 'neurons' in the first convolution layer, and even more for later ones. It would be computationally slow to use all of them individually for computing differentiation. Moreover, these neurons are funny in the sense that there are only 27 x 64 independent weights, corresponding to 64 independent 'filters', each with a receptive field of 3 x 3. Thus, a reasonable approach might be to use the mean (over all spatial locations) activations in the 64 layers as the 'state vector' for computing differentiation. This is what is done below.
 
 There might be other reasonable approaches to aggregating activations before computing differentiation such as:
@@ -475,6 +483,7 @@ plt.tight_layout()
 
 
 ### Given an image pair, compute differentiation in different layers
+
 We may compute differentiation in two ways:
 1. What is the distance between the distributions of activations for the two images? The differences do not look significant.
 2. What is the filter to filter difference in activations (how do I compute this?)? One way (looking at the results above) would be to normalize the responses (so that the dot product of response with itself for each stimulus is 1), then take the dot product, as done below.
@@ -517,6 +526,7 @@ diff_mats = compute_rdm(activations, pl=True)
 
 
 ### Activity distance as a function of layer
+
 - 0: cat
 - 1: dog
 - 2: oboe
