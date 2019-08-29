@@ -4,6 +4,9 @@
 
 ### August
 
+1. [8/28/2019 **Spectral differentiation across ephys sessions - summary**](pages/ephys_3_1/ephys_3_1.md)  
+   Mean differentiation for each stimulus as a function of hierarchy depth of region. Summarizes the notebooks below.
+
 1. [8/28/2019 **Spectral differentiation across ephys sessions - 1**](pages/ephys_2_1/2_spectral_by_trial.md)  
    [8/28/2019 **Spectral differentiation across ephys sessions - 2**](pages/ephys_2_2/2_spectral_by_trial-session_2.md)  
    Spectral differentiation is computed across the entire session for two example sessions, for units from different brain areas and their supersets. Looking only at the differentiation during spontaneous activity, we find that differentiation varies quite a bit even in early visual areas (and also in higher areas), indicating that it is driven by something other than visual stimuli. We see that the correlation between running speed and differentiation explains some of this. Secondly, during stimulus presentations, we see that differentiation (normalized by that of spontaneous activity) varies a lot in (early) visual areas, but very little in higher areas. In fact, differentiation seems to be the same for stimuli and spontaneous activity in higher areas, which is very surprising.
