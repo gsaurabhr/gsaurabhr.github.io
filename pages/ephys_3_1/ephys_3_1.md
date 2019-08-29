@@ -3,7 +3,7 @@ Spike times are binned into 50 ms bins.
 
 Differentiation is calculated in a moving frame of 30s. Each frame is divided into states spanning 1 s each (with a sampling rate of 50 Hz), and differentiation is calculated using these states.
 
-Only units with SNR >= 2 are used (but results look the same for snr > 3, snr > 3.5).
+Only units with SNR >= 2 are used (but results look the same for SNR > 3, SNR > 3.5).
 
 Background (right axis) is the running speed. I wondered if differentiation is correlated with running speed in some of the areas...
 
@@ -22,6 +22,8 @@ The figure shows differentiation for spontaneous activity for two sample regions
 Also note that in the thalamus, differentiation during stimuli is very low, nearly the same as for spontaneous activity, with very small modulations.
 
 ![png](df_all_th_scaled.png)
+
+![png](stimuli.png)
 
 # Df as a function of 'layer'
 
