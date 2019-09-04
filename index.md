@@ -4,6 +4,9 @@
 
 ### August
 
+1. [8/28/2019 **Spectral differentiation of mean responses by session**](pages/ephys_3_2/ephys_3_2.md)  
+   Also includes some results after changing analysis parameters to compare with Will's results.
+
 1. [8/28/2019 **Spectral differentiation across ephys sessions - summary**](pages/ephys_3_1/ephys_3_1.md)  
    Mean differentiation for each stimulus as a function of hierarchy depth of region. Summarizes the notebooks below.
 
