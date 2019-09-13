@@ -4,6 +4,9 @@
 
 ### August
 
+1. [9/13/2019 **Differentiation analysis for Signal-Noise sessions**](pages/ephys_4_1/ephys_4_1.md)
+   Differentiation and SD vs ND correlation as a function of depth from two sessions with the Signal-Noise stimuli (these stimuli are monochrome NatGeo clips with mostly animal, landscape and some human videos.)
+
 1. [8/28/2019 **Spectral differentiation of mean responses by session**](pages/ephys_3_2/ephys_3_2.md)  
    Also includes some results after changing analysis parameters to compare with Will's results.
 
@@ -18,6 +21,11 @@
    A preliminary look at neuropixel data shows some nice cases of units showing preferential activity to some kinds of stimuli. However, more importantly, the mean activity of a unit for repeated application of the same stimulus is very different from the trial to trial activity. This suggests that responses are extremely variable, and perhaps i should look deeper into the variability. In the meanwhile, this means that it is better to compute the differentiation an a trial by trial basis rather than on any kind of an averaged activity.
 
 ## Differentiation in CNNs
+
+### September
+
+1. [9/13/2019 **SD vs ND for vision models (openscope stimuli)**](pages/CNNs_SD_ND_vgg_resnet_inception_hmax/CNNs_SD_ND_vgg_resnet_inception_hmax.md)
+   Summary of results for HMAX, VGG16, ResNet50 and Inception V3 models, along with an example result from ephys data (see [here](pages/ephys_4_1/ephys_4_1.md) for details of corresponding npx analysis).
 
 ### August
 
