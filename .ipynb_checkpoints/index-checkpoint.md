@@ -2,10 +2,12 @@
 
 ## Neuropixel recordings
 
-### August
+### September
 
 1. [9/13/2019 **Differentiation analysis for Signal-Noise sessions**](pages/ephys_4_1/ephys_4_1.md)
    Differentiation and SD vs ND correlation as a function of depth from two sessions with the Signal-Noise stimuli (these stimuli are monochrome NatGeo clips with mostly animal, landscape and some human videos.)
+
+### August
 
 1. [8/28/2019 **Spectral differentiation of mean responses by session**](pages/ephys_3_2/ephys_3_2.md)  
    Also includes some results after changing analysis parameters to compare with Will's results.
