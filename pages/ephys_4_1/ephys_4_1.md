@@ -32,3 +32,25 @@ Looking at raw differentiation traces, it seems like there are reasonably strong
 
 ### mouse459220
 ![png](mouse459220.png)
+
+# More plots
+
+## SD vs ND in new ToE sessions
+
+### toe_sd_nd_737581020
+![png](toe_sd_nd_737581020.png)
+
+### toe_sd_nd_757216464
+
+![png](toe_sd_nd_757216464.png)
+
+### individual plots
+![png](toe_sd_nd_individual_757216464.png)
+
+## Correlation acros areas
+
+### toe_df_area_737581020
+![png](toe_df_area_737581020.png)
+
+### toe_df_area_corr_757216464
+![png](toe_df_area_corr_757216464.png)
