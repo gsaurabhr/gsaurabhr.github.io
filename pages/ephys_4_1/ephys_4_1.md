@@ -16,10 +16,10 @@ Note that the peak at VISl that I showed in an earlier analysis is gone. Back th
 ## Correlation between SD and ND
 
 ### mouse443954
-![png](mouse443954_SD_ND)
+![png](mouse443954_SD_ND.png)
 
 ### mouse459220
-![png](mouse459220_SD_ND)
+![png](mouse459220_SD_ND.png)
 
 ## Correlations across areas
 Looking at raw differentiation traces, it seems like there are reasonably strong correlations across areas. If correlations are high (especially between visual and hippocampal areas, for instance), it would indicate that some other process is driving the activity in a global manner, and not as a response to stimuli. Below I show the correlations for all pairs of areas, during just spontaneous activity, and for all activity, for two sessions.
