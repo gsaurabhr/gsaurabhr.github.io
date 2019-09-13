@@ -8,7 +8,10 @@ These are stimuli with short NatGeo clips ([previews here](https://www.dropbox.c
 
 Gabors and flashes have a low differentiation compared to the rest. Differentiation increases gradually from TH to VISal, then fluctuates. This increase with depth happens up to a larger depth compared to the touch of evil sessions.
 
-## Differentiation wrt depth for ToE stimuli
+## Differentiation wrt depth for ToE stimuli (new files)
+![png](ToE_Df_depth.png)
+
+## Df in Will's dataset (ToE)
 ![png](ToE_Df_depth.png)
 
 Note that the peak at VISl that I showed in an earlier analysis is gone. Back then I was filtering units with an SNR > 3, but here I include all units (to make the analysis comparable to Will's earlier analysis).
@@ -29,4 +32,3 @@ Looking at raw differentiation traces, it seems like there are reasonably strong
 
 ### mouse459220
 ![png](mouse459220.png)
-
