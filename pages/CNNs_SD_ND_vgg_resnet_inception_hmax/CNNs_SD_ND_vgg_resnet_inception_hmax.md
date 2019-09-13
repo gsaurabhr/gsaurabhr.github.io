@@ -1,16 +1,16 @@
 # Summary of correlation between SD and ND with depth in vision models (openscope stimuli)
 
 ## HMAX
-![png](hmax.png | width=100px)
+![png](hmax.png)
 
 ## VGG16
-![png](vgg16.png | width=100px)
+![png](vgg16.png)
 
 ## Inception V3
-![png](inceptionV3.png | width=100px)
+![png](inceptionV3.png)
 
 ## ResNet 50
-![png](resnet50.png | width=100px)
+![png](resnet50.png)
 
 ## Example ephys for comparison
-![png](mouse443954_SD_ND.png | width=100px)
+![png](mouse443954_SD_ND.png)
