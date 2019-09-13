@@ -12,7 +12,7 @@ Gabors and flashes have a low differentiation compared to the rest. Differentiat
 ![png](ToE_Df_depth.png)
 
 ## Df in Will's dataset (ToE)
-![png](ToE_Df_depth.png)
+![png](old_toe_df.png)
 
 Note that the peak at VISl that I showed in an earlier analysis is gone. Back then I was filtering units with an SNR > 3, but here I include all units (to make the analysis comparable to Will's earlier analysis).
 
