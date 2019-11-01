@@ -7,13 +7,19 @@ All data on this page is for differentiation calculated with a 0.1s state length
 ![png](sn_df_spontaneous.png)
 ![png](sn_df_gabor.png)
 
+---
+
 ### But can still be tricky to interpret
 ![png](bo_df_spontaneous.png)
 ![png](bo_df_gabor.png)
 
+---
+
 ### Especially true for our CNNs
 ![png](inception_df_mousenoise.png)
 ![png](inception_df_gabor.png)
+
+---
 
 Also note how gratings have a very high differentiation in early layers compared to the rest of stimuli. This is consistent with the understanding that early layers encode edges. This can get quite dramatic:
 
@@ -21,10 +27,14 @@ Also note how gratings have a very high differentiation in early layers compared
 
 ![png](resnet_df_gabor.png)
 
+---
+
 ## SD vs ND in CNNs and Neuropixel data
 ![png](corr_resnet.png)
 ![png](corr_hmax.png)
 ![png](corr_vgg.png)
+
+---
 
 ### Overall correlation is high in Npx data
 ![png](corr.png)
