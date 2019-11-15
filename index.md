@@ -4,16 +4,16 @@
 
 ### November
 
-1. [11/15/2019 **Normalizing differentiation by number and activity**](pages/ephys_5_1/ephys_5_1.md)
+1. [11/15/2019 **Normalizing differentiation by number and activity**](pages/ephys_5_1/ephys_5_1.md)  
    Initially we were normalizing differentiation wrt spontaneous activity, in order to get rid of the effects of 
 
-1. [11/01/2019 **Ephys - CNN comparisons (Showcase poster data)**](pages/showcase2019/showcase2019.md)
+1. [11/01/2019 **Ephys - CNN comparisons (Showcase poster data)**](pages/showcase2019/showcase2019.md)  
 
 ### September
 
-1. [9/27/2019 **Differentiation (SD-ND correlation, smaller states)**](pages/ephys_4_2/ephys_4_2.md)
+1. [9/27/2019 **Differentiation (SD-ND correlation, smaller states)**](pages/ephys_4_2/ephys_4_2.md)  
 
-1. [9/13/2019 **Differentiation analysis for Signal-Noise sessions**](pages/ephys_4_1/ephys_4_1.md)
+1. [9/13/2019 **Differentiation analysis for Signal-Noise sessions**](pages/ephys_4_1/ephys_4_1.md)  
    Differentiation and SD vs ND correlation as a function of depth from two sessions with the Signal-Noise stimuli (these stimuli are monochrome NatGeo clips with mostly animal, landscape and some human videos.)
 
 ### August
