@@ -40,6 +40,6 @@ Normalization of individual units, local time
 ![png](output_25_0.png)
 
 # Normalization type
-State length of 0.1s, mean firing differentiation
+State length of 0.1s, spectral differentiation
 
 ![png](output_27_0.png)
