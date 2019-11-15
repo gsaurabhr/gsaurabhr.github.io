@@ -1,38 +1,45 @@
-# Differentiation and mean firing rates
-All data in this section is for differentiation calculated with a 1s state, over 30s windows
+# Validate normalization
+---
 
-## Differentiation and mean firing rate are strongly correlated
-![png](df_fr_corr_sn.png)
-![png](df_fr_corr_bo.png)
+## Uniformly scaled firing rates
+![png](verify_norm_magnitude.png)
 
-## Neurophysiological differentiation vs stimulus differentiation
-![png](nd_vs_sd.png)
+## Resample different fractions of units
+![png](verify_norm_number.png)
 
-# Firing rate dependence of differentiation
+# spectral vs mean_firing_rate
+---
 
-## Differentiation increases super-lienarly with firing rate
-The below plots are for a simple Poisson process, with 50 units. The firing rate of each unit is chosen in two ways as indicated below.
+## Global norm
+The figures are for normalization using the entire timeseries, and across all units
 
-The takeaway is that differentiation increases super-linearly. This means that if region A has on average a higher firing propensity compared to region B (for both spontaneous and stimulus response), then even after normalizing by spontaneous differentiation, region B will show a higher differentiation comopared to region A, *simply due to a higher firing propensity*. Thus, we might want to normalize firing rates to see if anyting else besides FR contributes to the differences in differentiation observed across different regions.
+100ms long states, 3s differentiation window.
 
-### All units with identical mean firing rates
-![png](poisson_diff_uniform.png)
+![png](output_17_0.png)
 
-### Mean firing rates drawn from an exponential distribution
-![png](poisson_diff_exponential.png)
+## Local norm
+Normalization of individual units, local time
 
-## Differentiation does not change much after shuffling units across sessions
-![png](shuffled_units.png)
+100ms long states, 3s differentiation window
 
-# Differentiation for shorter state, window lengths
+![png](output_19_0.png)
 
-## SignalNoise stimuli
-![png](sn_20ms.png)
-![png](sn_100ms.png)
-![png](sn_300ms.png)
-![png](sn_1000ms.png)
+# Timescales
+---
 
-## BrainObservatory stimuli
-![png](bo_100ms.png)
-![png](bo_300ms.png)
-![png](bo_1000ms.png)
+## Spectral differentiation; global norm
+
+![png](output_21_0.png)
+
+## Mean firing differentiation; global norm
+
+![png](output_23_0.png)
+
+## Mean firing differentiation; local norm
+
+![png](output_25_0.png)
+
+# Normalization type
+State length of 0.1s, mean firing differentiation
+
+![png](output_27_0.png)
