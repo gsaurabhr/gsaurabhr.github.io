@@ -2,6 +2,12 @@
 
 ## Neuropixel recordings
 
+### December
+
+1. [12/06/2019 **Differentiation by layer, differentiation in averaged responses**](pages/ephys_summary_1/ephys_summary_1.md)  
+   Differentiation is computed by layer, and we see that it is significantly higher in superficial layers compared to deep (5/6) layers.  
+   Independently, differentiation is computed on averaged responses to repeated movie stimuli, to see if that reduces the differentiation in the hippocampus, where activity is high, but not likely to be correlated with visual stimulus.
+
 ### November
 
 1. [11/15/2019 **Normalizing differentiation by number and activity**](pages/ephys_5_1/ephys_5_1.md)  
