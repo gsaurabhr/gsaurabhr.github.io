@@ -1,28 +1,35 @@
 # Notebooks by topic
 
+## Visual Behavior
+
+### January 2020
+
+1. [01/10/2020 **Differentiation, PCIst during behavior task**](pages/behavior_1/behavior_1.md)  
+   Mean firing rate, mfr_differentiation and PCIst metrics are computed for different regiona and layers, during the visual behavior task.
+
 ## Neuropixel recordings
 
-### December
+### December 2019
 
 1. [12/06/2019 **Differentiation by layer, differentiation in averaged responses**](pages/ephys_summary_1/ephys_summary_1.md)  
    Differentiation is computed by layer, and we see that it is significantly higher in superficial layers compared to deep (5/6) layers.  
    Independently, differentiation is computed on averaged responses to repeated movie stimuli, to see if that reduces the differentiation in the hippocampus, where activity is high, but not likely to be correlated with visual stimulus.
 
-### November
+### November 2019
 
 1. [11/15/2019 **Normalizing differentiation by number and activity**](pages/ephys_5_1/ephys_5_1.md)  
    Initially we were normalizing differentiation wrt spontaneous activity, in order to get rid of the effects of 
 
 1. [11/01/2019 **Ephys - CNN comparisons (Showcase poster data)**](pages/showcase2019/showcase2019.md)  
 
-### September
+### September 2019
 
 1. [9/27/2019 **Differentiation (SD-ND correlation, smaller states)**](pages/ephys_4_2/ephys_4_2.md)  
 
 1. [9/13/2019 **Differentiation analysis for Signal-Noise sessions**](pages/ephys_4_1/ephys_4_1.md)  
    Differentiation and SD vs ND correlation as a function of depth from two sessions with the Signal-Noise stimuli (these stimuli are monochrome NatGeo clips with mostly animal, landscape and some human videos.)
 
-### August
+### August 2019
 
 1. [8/28/2019 **Spectral differentiation of mean responses by session**](pages/ephys_3_2/ephys_3_2.md)  
    Also includes some results after changing analysis parameters to compare with Will's results.
@@ -39,12 +46,12 @@
 
 ## Differentiation in CNNs
 
-### September
+### September 2019
 
 1. [9/13/2019 **SD vs ND for vision models (openscope stimuli)**](pages/CNNs_SD_ND_vgg_resnet_inception_hmax/CNNs_SD_ND_vgg_resnet_inception_hmax.md)
    Summary of results for HMAX, VGG16, ResNet50 and Inception V3 models, along with an example result from ephys data (see [here](pages/ephys_4_1/ephys_4_1.md) for details of corresponding npx analysis).
 
-### August
+### August 2019
 
 1. [8/13/2019 **VGG16 shown mouse stimuli**](pages/VGG16_mouse_stimuli/VGG16_mouse_stimuli.md)  
    Preliminary results (differentiation across layers for different movies, correlation between input image differentiation and activation differentiation in the layers, dependence of correlation on layer depth, stimulus set).
