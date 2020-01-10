@@ -7,6 +7,7 @@
 ![mfr_diff](mfr_diff_comparisons_single_session.png)
 
 ### PCIst
+PCIst compares the number of 'state transitions' in the baseline period (before stimulus) to the response period (after stimulus). Here I use the image presentation as the stimulus. Images are presented every 750ms, and the presentation lasts for 250ms (so that there is 500ms of blank screen between presentations). The baseline and response windows are chosen to be 300ms, so that the baseline is sufficiently after the prefious trial, and the response is long enough to capture any latish responses. It turns out that even in the original application of PCIst to EEG data, they used 300ms windows.
 ![PCIst](PCIst_comparisons_single_session.png)
 
 ### mean firing rate
