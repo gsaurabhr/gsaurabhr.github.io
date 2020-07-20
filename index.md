@@ -61,3 +61,7 @@
 
 1. [8/6/2019 **Preliminary observations for differentiation in a CNN**](pages/VGG16_Differentiation_original/VGG16_Differentiation_original.md)  
    Interestingly, differentiation as we calculate here does not show the trends that we would expect.
+
+# Personal
+
+1. [Biking recordings](pages/personal/alltracks.html)
